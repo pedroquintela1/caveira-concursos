@@ -61,19 +61,24 @@ export async function GET(
 
     // Montar gabarito
     const gabarito: GabaritoItem[] =
-      questoes?.map((q: any, index: number) => ({
-        numero: index + 1,
-        questao_id: q.id,
-        codigo: q.codigo,
-        gabarito_oficial: q.gabarito_oficial,
-        resposta_usuario: q.resposta_usuario,
-        status: q.ja_respondida
-          ? q.respondeu_corretamente
-            ? 'acertou'
-            : 'errou'
-          : 'nao_resolvida',
-        resolvida_em: q.respondida_em,
-      })) || [];
+      questoes?.map((q: any, index: number) => {
+        const jaRespondida = q.ja_respondida === true;
+        const respondeuCorretamente = q.respondeu_corretamente === true;
+
+        return {
+          numero: index + 1,
+          questao_id: q.id,
+          codigo: q.codigo || null,
+          gabarito_oficial: q.gabarito || q.gabarito_oficial,
+          resposta_usuario: q.resposta_usuario || null,
+          status: jaRespondida
+            ? respondeuCorretamente
+              ? 'acertou'
+              : 'errou'
+            : 'nao_resolvida',
+          resolvida_em: q.respondida_em || null,
+        };
+      }) || [];
 
     // Estatísticas do gabarito
     const total = gabarito.length;

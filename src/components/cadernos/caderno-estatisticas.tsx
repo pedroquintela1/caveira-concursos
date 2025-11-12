@@ -249,17 +249,22 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
               </Pie>
               <Tooltip
                 contentStyle={{
-                  backgroundColor: '#1f2937',
-                  border: '1px solid #374151',
+                  backgroundColor: '#374151',
+                  border: '2px solid #8fbc8f',
                   borderRadius: '8px',
                   color: '#fff',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  padding: '12px',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
                 }}
               />
               <Legend
                 verticalAlign="bottom"
                 height={36}
+                wrapperStyle={{ paddingTop: '20px' }}
                 formatter={(value, entry: any) => (
-                  <span style={{ color: '#fff' }}>
+                  <span style={{ color: '#e5e7eb', fontSize: '14px', fontWeight: '500' }}>
                     {value}: {entry.payload.value} (
                     {(
                       (entry.payload.value /
@@ -282,20 +287,42 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
           {barData.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                <XAxis dataKey="disciplina" stroke="#9ca3af" fontSize={12} />
-                <YAxis stroke="#9ca3af" fontSize={12} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#4b5563" />
+                <XAxis
+                  dataKey="disciplina"
+                  stroke="#d1d5db"
+                  fontSize={12}
+                  tick={{ fill: '#d1d5db' }}
+                />
+                <YAxis
+                  stroke="#d1d5db"
+                  fontSize={12}
+                  tick={{ fill: '#d1d5db' }}
+                />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: '#1f2937',
-                    border: '1px solid #374151',
+                    backgroundColor: '#374151',
+                    border: '2px solid #8fbc8f',
                     borderRadius: '8px',
                     color: '#fff',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    padding: '12px',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
                   }}
+                  labelStyle={{ color: '#e5e7eb', fontWeight: '600', marginBottom: '4px' }}
                 />
-                <Legend />
-                <Bar dataKey="acertos" fill="#10b981" name="Acertos" />
-                <Bar dataKey="erros" fill="#ef4444" name="Erros" />
+                <Legend
+                  wrapperStyle={{ paddingTop: '10px' }}
+                  iconType="square"
+                  formatter={(value) => (
+                    <span style={{ color: '#e5e7eb', fontSize: '14px', fontWeight: '500' }}>
+                      {value}
+                    </span>
+                  )}
+                />
+                <Bar dataKey="acertos" fill="#10b981" name="Acertos" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="erros" fill="#ef4444" name="Erros" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           ) : (
@@ -385,14 +412,14 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
       <div className="flex items-center gap-4">
         <Button
           variant="outline"
-          className="border-green-600 text-green-500 hover:bg-green-900/30"
+          className="border-green-500 bg-green-500/10 text-green-400 hover:bg-green-500/20 hover:border-green-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:border-gray-600 disabled:bg-gray-800/50 disabled:text-gray-500"
           disabled
         >
           Criar Caderno com Erradas
         </Button>
         <Button
           variant="outline"
-          className="border-blue-600 text-blue-500 hover:bg-blue-900/30"
+          className="border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:border-blue-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:border-gray-600 disabled:bg-gray-800/50 disabled:text-gray-500"
           disabled
         >
           Criar Caderno com Resolvidas

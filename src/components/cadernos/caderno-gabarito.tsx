@@ -245,7 +245,7 @@ export function CadernoGabarito({ cadernoId }: CadernoGabaritoProps) {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="text-[#8fbc8f] hover:bg-[#8fbc8f]/10"
+                          className="text-[#8fbc8f] hover:bg-[#8fbc8f]/20 hover:text-[#a0cca0] font-medium transition-all"
                         >
                           Ir para questão
                         </Button>

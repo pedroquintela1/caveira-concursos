@@ -224,7 +224,7 @@ export function CadernoIndice({ cadernoId }: CadernoIndiceProps) {
             variant="outline"
             size="sm"
             onClick={exportarParaPlanilha}
-            className="border-[#8fbc8f] bg-[#8fbc8f] text-gray-900 hover:bg-[#7dad7d]"
+            className="border-[#8fbc8f] bg-[#8fbc8f] text-gray-900 hover:bg-[#7dad7d] hover:scale-105 transition-all font-semibold shadow-md"
           >
             <FileSpreadsheet className="mr-2 h-4 w-4" />
             Exportar Planilha
@@ -233,7 +233,7 @@ export function CadernoIndice({ cadernoId }: CadernoIndiceProps) {
             variant="outline"
             size="sm"
             onClick={expandAll}
-            className="border-gray-600 bg-gray-700 text-white hover:bg-gray-600"
+            className="border-gray-500 bg-gray-700 text-gray-200 hover:bg-gray-600 hover:border-gray-400 hover:text-white transition-all font-medium"
           >
             Expandir Tudo
           </Button>
@@ -241,7 +241,7 @@ export function CadernoIndice({ cadernoId }: CadernoIndiceProps) {
             variant="outline"
             size="sm"
             onClick={collapseAll}
-            className="border-gray-600 bg-gray-700 text-white hover:bg-gray-600"
+            className="border-gray-500 bg-gray-700 text-gray-200 hover:bg-gray-600 hover:border-gray-400 hover:text-white transition-all font-medium"
           >
             Retrair Tudo
           </Button>

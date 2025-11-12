@@ -302,27 +302,13 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
                 <Tooltip
                   cursor={false}
                   contentStyle={{
-                    backgroundColor: 'rgba(31, 41, 55, 0.95)',
-                    border: 'none',
+                    backgroundColor: '#1f2937',
+                    border: '1px solid #374151',
                     borderRadius: '8px',
-                    color: '#ffffff',
-                    fontSize: '14px',
-                    fontWeight: '600',
-                    padding: '12px 16px',
-                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.6)',
+                    color: '#fff',
                   }}
-                  labelStyle={{ color: '#ffffff', fontWeight: '700', marginBottom: '8px' }}
-                  itemStyle={{ color: '#ffffff', fontWeight: '600' }}
                 />
-                <Legend
-                  wrapperStyle={{ paddingTop: '10px' }}
-                  iconType="square"
-                  formatter={(value) => (
-                    <span style={{ color: '#ffffff', fontSize: '14px', fontWeight: '600' }}>
-                      {value}
-                    </span>
-                  )}
-                />
+                <Legend />
                 <Bar dataKey="acertos" fill="#10b981" name="Acertos" radius={[6, 6, 0, 0]} />
                 <Bar dataKey="erros" fill="#ef4444" name="Erros" radius={[6, 6, 0, 0]} />
               </BarChart>

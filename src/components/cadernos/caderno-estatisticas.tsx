@@ -249,14 +249,14 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
               </Pie>
               <Tooltip
                 contentStyle={{
-                  backgroundColor: '#374151',
-                  border: '2px solid #8fbc8f',
+                  backgroundColor: 'rgba(31, 41, 55, 0.95)',
+                  border: 'none',
                   borderRadius: '8px',
-                  color: '#fff',
+                  color: '#ffffff',
                   fontSize: '14px',
-                  fontWeight: '500',
-                  padding: '12px',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
+                  fontWeight: '600',
+                  padding: '12px 16px',
+                  boxShadow: '0 10px 25px rgba(0, 0, 0, 0.6)',
                 }}
               />
               <Legend
@@ -264,7 +264,7 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
                 height={36}
                 wrapperStyle={{ paddingTop: '20px' }}
                 formatter={(value, entry: any) => (
-                  <span style={{ color: '#e5e7eb', fontSize: '14px', fontWeight: '500' }}>
+                  <span style={{ color: '#ffffff', fontSize: '14px', fontWeight: '600' }}>
                     {value}: {entry.payload.value} (
                     {(
                       (entry.payload.value /
@@ -287,42 +287,44 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
           {barData.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#4b5563" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                 <XAxis
                   dataKey="disciplina"
-                  stroke="#d1d5db"
+                  stroke="#9ca3af"
                   fontSize={12}
-                  tick={{ fill: '#d1d5db' }}
+                  tick={{ fill: '#e5e7eb' }}
                 />
                 <YAxis
-                  stroke="#d1d5db"
+                  stroke="#9ca3af"
                   fontSize={12}
-                  tick={{ fill: '#d1d5db' }}
+                  tick={{ fill: '#e5e7eb' }}
                 />
                 <Tooltip
+                  cursor={false}
                   contentStyle={{
-                    backgroundColor: '#374151',
-                    border: '2px solid #8fbc8f',
+                    backgroundColor: 'rgba(31, 41, 55, 0.95)',
+                    border: 'none',
                     borderRadius: '8px',
-                    color: '#fff',
+                    color: '#ffffff',
                     fontSize: '14px',
-                    fontWeight: '500',
-                    padding: '12px',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
+                    fontWeight: '600',
+                    padding: '12px 16px',
+                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.6)',
                   }}
-                  labelStyle={{ color: '#e5e7eb', fontWeight: '600', marginBottom: '4px' }}
+                  labelStyle={{ color: '#ffffff', fontWeight: '700', marginBottom: '8px' }}
+                  itemStyle={{ color: '#ffffff', fontWeight: '600' }}
                 />
                 <Legend
                   wrapperStyle={{ paddingTop: '10px' }}
                   iconType="square"
                   formatter={(value) => (
-                    <span style={{ color: '#e5e7eb', fontSize: '14px', fontWeight: '500' }}>
+                    <span style={{ color: '#ffffff', fontSize: '14px', fontWeight: '600' }}>
                       {value}
                     </span>
                   )}
                 />
-                <Bar dataKey="acertos" fill="#10b981" name="Acertos" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="erros" fill="#ef4444" name="Erros" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="acertos" fill="#10b981" name="Acertos" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="erros" fill="#ef4444" name="Erros" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           ) : (

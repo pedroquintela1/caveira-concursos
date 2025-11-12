@@ -258,13 +258,27 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
                   padding: '12px 16px',
                   boxShadow: '0 10px 25px rgba(0, 0, 0, 0.6)',
                 }}
+                labelStyle={{
+                  color: '#ffffff',
+                  fontWeight: '600',
+                }}
+                itemStyle={{
+                  color: '#ffffff',
+                  fontWeight: '600',
+                }}
               />
               <Legend
                 verticalAlign="bottom"
                 height={36}
                 wrapperStyle={{ paddingTop: '20px' }}
                 formatter={(value, entry: any) => (
-                  <span style={{ color: '#ffffff', fontSize: '14px', fontWeight: '600' }}>
+                  <span
+                    style={{
+                      color: '#ffffff',
+                      fontSize: '14px',
+                      fontWeight: '600',
+                    }}
+                  >
                     {value}: {entry.payload.value} (
                     {(
                       (entry.payload.value /
@@ -309,8 +323,18 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
                   }}
                 />
                 <Legend />
-                <Bar dataKey="acertos" fill="#10b981" name="Acertos" radius={[6, 6, 0, 0]} />
-                <Bar dataKey="erros" fill="#ef4444" name="Erros" radius={[6, 6, 0, 0]} />
+                <Bar
+                  dataKey="acertos"
+                  fill="#10b981"
+                  name="Acertos"
+                  radius={[6, 6, 0, 0]}
+                />
+                <Bar
+                  dataKey="erros"
+                  fill="#ef4444"
+                  name="Erros"
+                  radius={[6, 6, 0, 0]}
+                />
               </BarChart>
             </ResponsiveContainer>
           ) : (
@@ -400,14 +424,14 @@ export function CadernoEstatisticas({ cadernoId }: CadernoEstatisticasProps) {
       <div className="flex items-center gap-4">
         <Button
           variant="outline"
-          className="border-green-500 bg-green-500/10 text-green-400 hover:bg-green-500/20 hover:border-green-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:border-gray-600 disabled:bg-gray-800/50 disabled:text-gray-500"
+          className="border-green-500 bg-green-500/10 text-green-400 hover:border-green-400 hover:bg-green-500/20 disabled:cursor-not-allowed disabled:border-gray-600 disabled:bg-gray-800/50 disabled:text-gray-500 disabled:opacity-50"
           disabled
         >
           Criar Caderno com Erradas
         </Button>
         <Button
           variant="outline"
-          className="border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:border-blue-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:border-gray-600 disabled:bg-gray-800/50 disabled:text-gray-500"
+          className="border-blue-500 bg-blue-500/10 text-blue-400 hover:border-blue-400 hover:bg-blue-500/20 disabled:cursor-not-allowed disabled:border-gray-600 disabled:bg-gray-800/50 disabled:text-gray-500 disabled:opacity-50"
           disabled
         >
           Criar Caderno com Resolvidas
